@@ -1,0 +1,5 @@
+/grafana-storage/*
+/prom-storage/*
+/prom-configs/alertmanager.yml
+.*
+!.gitignore

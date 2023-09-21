@@ -1,0 +1,33 @@
+version: "3"
+
+networks:
+  mynet:
+
+services:
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prom-configs:/etc/prometheus
+      - ./prom-storage:/prometheus
+    ports:
+      - 9090:9090
+    networks:
+      - mynet
+
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - ./grafana-storage:/var/lib/grafana
+    ports:
+      - 3000:3000
+    networks:
+      - mynet
+
+  alertmanager:
+    image: quay.io/prometheus/alertmanager
+    volumes:
+      - ./prom-configs/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+    ports:
+      - 9093:9093
+    networks:
+      - mynet

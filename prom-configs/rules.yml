@@ -1,0 +1,7 @@
+groups:
+- name: Processes
+  rules:
+  - alert: GenshinStarted
+    expr: windows_process_threads{process="GenshinImpact"}/windows_process_threads{process="GenshinImpact"}
+    annotations:
+      summary: GenshinStarted
