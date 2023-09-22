@@ -4,7 +4,7 @@ The main goal was to monitor my ASUS laptop and receive alerts on the start of p
 ## What has been done
 ### Start prometheus
 I began with starting Prometheus in a container.
-For basic demo set up visit [Configuring Prometheus to monitor itself](https://prometheus.io/docs/prometheus/latest/getting_started/#configuring-prometheus-to-monitor-itself) section of [Prometheus Getting Started](https://prometheus.io/docs/prometheus/latest/getting_started) page and configure ```prometheus.yml_. This configuration will allow you to have a working Prometheus instance which monitors itself.
+For basic demo set up visit [Configuring Prometheus to monitor itself](https://prometheus.io/docs/prometheus/latest/getting_started/#configuring-prometheus-to-monitor-itself) section of [Prometheus Getting Started](https://prometheus.io/docs/prometheus/latest/getting_started) page and configure ```prometheus.yml```. This configuration will allow you to have a working Prometheus instance which monitors itself.
 I simply started with the following command to tweak and click around:
 ```
 $ docker run --name=prometheus -dp 9090:9090 -v ./prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
